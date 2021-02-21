@@ -27,6 +27,7 @@ public class HiLoGameManager : GameManager
         highBtn3.gameObject.SetActive(false);
         lowBtn3.gameObject.SetActive(false);
         hideCard.SetActive(false);
+        scoreText.text = "Hand: --";
 
         dealBtn.onClick.AddListener(() => DealClicked());
         betBtn.onClick.AddListener(() => BetClicked());
@@ -104,7 +105,6 @@ public class HiLoGameManager : GameManager
         int cardValue = hlPlayerScript.hand[selectCard].GetComponent<CardScript>().GetValueOfCard();
         int dealerCardValue = hlDealerScript.hand[0].GetComponent<CardScript>().GetValueOfCard();
 
-        scoreText.text = "Hand: " + cardValue;
         hideCard.SetActive(false);
         dealerScoreText.text = "Dealer Hand: " + hlDealerScript.handValue.ToString();
         

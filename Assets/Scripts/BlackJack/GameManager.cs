@@ -105,13 +105,13 @@ public class GameManager : MonoBehaviour
         currencyText.text = "$" + playerScript.GetMoney().ToString();
     }
 
-    protected void BetClicked()
+    protected virtual void BetClicked()
     {
         betAmount += 20;
         betsText.text = "Bets: " + betAmount.ToString();
     }
 
-    protected void AutoBetClicked()
+    protected virtual void AutoBetClicked()
     { 
         if (autoBetSet)
         {
