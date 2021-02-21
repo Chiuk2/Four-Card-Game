@@ -139,7 +139,7 @@ public class HandCheckerScript : MonoBehaviour
         return IsStraight(sortedHand) && IsFlush(hand);
     }
 
-    public bool IsRoyaFlush(GameObject[] hand, List<int> sortedHand)
+    public bool IsRoyalFlush(GameObject[] hand, List<int> sortedHand)
     {
         return IsStraight(sortedHand) && IsFlush(hand) 
             && sortedHand.Contains(1) && sortedHand.Contains(13);
