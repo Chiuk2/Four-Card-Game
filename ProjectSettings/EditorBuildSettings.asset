@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HighLow.unity
     guid: c725840a4ef5cf544a10363b90a33040
+  - enabled: 1
+    path: Assets/Scenes/FivePoker.unity
+    guid: 838e3ebc6ea6b62419e1dcf9f432b7b4
   m_configObjects: {}

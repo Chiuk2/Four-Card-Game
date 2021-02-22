@@ -16,6 +16,7 @@ public class SelectGameScript : MonoBehaviour
     {
         blackJack.onClick.AddListener(() => GoToBlackJack());
         highLow.onClick.AddListener(() => GoToHighLow());
+        fivePoker.onClick.AddListener(() => GoToFivePoker());
     }
 
     private void GoToBlackJack()
@@ -26,5 +27,10 @@ public class SelectGameScript : MonoBehaviour
     private void GoToHighLow()
     {
         SceneManager.LoadScene("HighLow");
+    }
+
+    private void GoToFivePoker()
+    {
+        SceneManager.LoadScene("FivePoker");
     }
 }

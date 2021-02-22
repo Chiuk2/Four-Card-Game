@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game4
+  m_Text: 7 Poker
 --- !u!222 &258619547
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1038,7 +1038,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game3
+  m_Text: 5 Poker
 --- !u!222 &908396515
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -51,14 +51,12 @@ public class DeckScript : MonoBehaviour
 
     public int DealCard(CardScript cardScript)
     {
-
+        if (currentIndex > 52)
+            currentIndex = 0;
+;
         cardScript.SetCard(cardObjects[currentIndex]);
         cardScript.SetValue(cardValues[currentIndex]);
-
-        if (currentIndex == 53)
-            currentIndex = 0;
-        else
-            currentIndex++;
+        currentIndex++;
         return cardScript.GetValueOfCard();
     }
 

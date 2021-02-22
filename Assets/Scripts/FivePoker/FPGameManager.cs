@@ -16,16 +16,21 @@ public class FPGameManager : GameManager
     public Text holdText3;
     public Text holdText4;
     public Text holdText5;
+    public Text winMultiplierText;
 
     public FPokerPlayerScript fPokerPlayerScript;
     public HandCheckerScript handChecker;
     public HandBoardController handBoardController;
 
     private int dealCount = 0;
+    private int betIndex = 0;
+    protected int winMuliplier = 2;
     private List<int> notHeldCards = new List<int>() {1, 2, 3, 4, 5};
+    
     // Start is called before the first frame update
     void Start()
     {
+        pot = 0;
         gameText.gameObject.SetActive(false);
         dealBtn.onClick.AddListener(() => DealClicked());
         betBtn.onClick.AddListener(() => BetClicked());
@@ -38,10 +43,16 @@ public class FPGameManager : GameManager
         holdBtn3.onClick.AddListener(() => HoldBtnClicked(3, holdText3));
         holdBtn4.onClick.AddListener(() => HoldBtnClicked(4, holdText4));
         holdBtn5.onClick.AddListener(() => HoldBtnClicked(5, holdText5));
+        handBoardController.UpdateBetPanel(betIndex++);
+        winMultiplierText.text = "WIN " + winMuliplier.ToString() + "X";
     }
 
     protected override void DealClicked()
     {
+        handBoardController.ResetBoard();
+        List<int> sortedHand;
+        List<int> testHand = new List<int>() { 1, 2, 3, 4, 5 };
+
         if (++dealCount == 2)
         {
             if (notHeldCards.Count != 5)
@@ -55,48 +66,69 @@ public class FPGameManager : GameManager
                 GameObject.Find("Deck").GetComponent<DeckScript>().Shuffle();
                 fPokerPlayerScript.StartHand();
             }
-            ResetBtns(false);
-            dealCount = 0;
+            sortedHand = handChecker.SortHand(fPokerPlayerScript.hand);
+            sortedHand.ForEach(x => Debug.Log("Hand Value: " + x));
+            pot = 0;
+            CheckCurrentHand(sortedHand);
+            RoundOver();
         }
         else
         {
-            ResetBtnTexts();
-            ResetBtns(true);
+            StartRound();
             fPokerPlayerScript.ResetHand();
             GameObject.Find("Deck").GetComponent<DeckScript>().Shuffle();
             fPokerPlayerScript.StartHand();
+            sortedHand = handChecker.SortHand(fPokerPlayerScript.hand);
+            sortedHand.ForEach(x => Debug.Log("Hand Value: " + x));
+            CheckCurrentHand(sortedHand);
         }
-        
-        gameText.gameObject.SetActive(false);
-        handBoardController.ResetBoard();
-        List<int> sortedHand = handChecker.SortHand(fPokerPlayerScript.hand);
-        List<int> testHand = new List<int>() { 1, 2, 3, 4, 5 };
-        CheckCurrentHand(sortedHand);
-        //sortedHand.ForEach(i => Debug.Log("Show sorted list: " + i));
-        //Debug.Log("Is Straight Hand? " + handChecker.IsStraight(sortedHand));
-        //Debug.Log("Is there flush? " + handChecker.IsFlush(fPokerPlayerScript.hand));
-        //Debug.Log("Is there full house " + handChecker.IsFullHouse(sortedHand));
-        //Debug.Log("Is there two pairs " + handChecker.IsTwoPair(sortedHand));
-        //Debug.Log("Is there jack or better pair " + handChecker.IsPair(sortedHand));
-        //Debug.Log("Is there three of a kind " + handChecker.IsThreeOfAKind(sortedHand));
-        //Debug.Log("Is there four of a kind " + handChecker.IsFourOfAKind(sortedHand));
-        //Debug.Log("Is there straight flush? " + handChecker.IsStraightFlush(fPokerPlayerScript.hand, sortedHand));
 
     }
 
     protected override void RoundOver()
     {
+        betBtn.gameObject.SetActive(true);
+        autoBetBtn.gameObject.SetActive(true);
+        winMultiplierText.text = "WIN " + winMuliplier.ToString() + "X" + pot;
+        fPokerPlayerScript.AdjustMoney(pot * winMuliplier);
+        currencyText.text = "$" + fPokerPlayerScript.GetMoney().ToString();
+        pot = 0;
+        ResetBtns(false);
+        dealCount = 0;
+        gameText.gameObject.SetActive(true);
+    }
 
+    protected virtual void StartRound()
+    {
+        pot = 0;
+        gameText.gameObject.SetActive(false);
+        betBtn.gameObject.SetActive(false);
+        autoBetBtn.gameObject.SetActive(false);
+        winMultiplierText.text = "WIN " + winMuliplier.ToString() + "X";
+        fPokerPlayerScript.AdjustMoney(-betIndex);
+        currencyText.text = "$" + fPokerPlayerScript.GetMoney().ToString();
+        ResetBtnTexts();
+        ResetBtns(true);
     }
 
     protected override void BetClicked()
     {
+        // Bet One Button
 
+        if (betIndex > 4)
+            betIndex = 0;
+
+        handBoardController.UpdateBetPanel(betIndex++);
+        betsText.text = "Bet: " + betIndex;
     }
 
     protected override void AutoBetClicked()
     {
-
+        int prevIndex = betIndex > 4 ? 4 : betIndex;
+        betIndex = 4;
+        handBoardController.MaxBetPanel(betIndex, prevIndex);
+        betsText.text = "Bet: " + (betIndex + 1);
+        betIndex++;
     }
 
     protected virtual void HoldBtnClicked(int btn, Text holdText)
@@ -188,31 +220,40 @@ public class FPGameManager : GameManager
         switch (hand)
         {
             case "Royal Flush": 
-                handBoardController.SetHandText(1);
+                handBoardController.SetHandText(0);
+                pot += handBoardController.SetBetText(betIndex - 1, 0);
                 break;
             case "Straight Flush":
-                handBoardController.SetHandText(2);
+                handBoardController.SetHandText(1);
+                pot += handBoardController.SetBetText(betIndex - 1, 1);
                 break;
             case "Four Of A Kind":
-                handBoardController.SetHandText(3);
+                handBoardController.SetHandText(2);
+                pot += handBoardController.SetBetText(betIndex - 1, 2);
                 break;
             case "Full House":
-                handBoardController.SetHandText(4);
+                handBoardController.SetHandText(3);
+                pot += handBoardController.SetBetText(betIndex - 1, 3);
                 break;
             case "Flush":
-                handBoardController.SetHandText(5);
+                handBoardController.SetHandText(4);
+                pot += handBoardController.SetBetText(betIndex - 1, 4);
                 break;
             case "Straight":
-                handBoardController.SetHandText(6);
+                handBoardController.SetHandText(5);
+                pot += handBoardController.SetBetText(betIndex - 1, 5);
                 break;
             case "Three Of A Kind":
-                handBoardController.SetHandText(7);
+                handBoardController.SetHandText(6);
+                pot += handBoardController.SetBetText(betIndex - 1, 6);
                 break;
             case "Two Pair":
-                handBoardController.SetHandText(8);
+                handBoardController.SetHandText(7);
+                pot += handBoardController.SetBetText(betIndex - 1, 7);
                 break;
             case "Jack Or Better":
-                handBoardController.SetHandText(9);
+                handBoardController.SetHandText(8);
+                pot += handBoardController.SetBetText(betIndex - 1, 8);
                 break;
             default:
                 break;

@@ -78,7 +78,9 @@ public class HandCheckerScript : MonoBehaviour
             }
 
             foreach (GameObject card in hand)
-            { 
+            {
+                Debug.Log("First Suit: " + firstSuit);
+                Debug.Log("Card material name: " + card.GetComponent<MeshRenderer>().material.name);
                 if (!card.GetComponent<MeshRenderer>().material.name.Contains(firstSuit))
                     return (false);
             }
