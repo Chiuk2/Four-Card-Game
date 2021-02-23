@@ -10,3 +10,5 @@ Player game menu
 3.                   5 card poker
 
 4.                   7 card poker - Player chooses 5 cards
+
+5.                   Bonus* Video Poker
