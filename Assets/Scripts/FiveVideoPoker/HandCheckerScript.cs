@@ -18,6 +18,20 @@ public class HandCheckerScript : MonoBehaviour
         return sortedHand;
     }
 
+    public List<KeyValuePair<int, int>> HandPositionList(GameObject[] hand)
+    {
+        List<KeyValuePair<int, int>> convertList = new List<KeyValuePair<int, int>>();
+
+        for (int i = 0; i < hand.Length; i++)
+        {
+            convertList.Add(new KeyValuePair<int, int>(i, hand[i].GetComponent<CardScript>().GetValueOfCard()));
+        }
+
+        convertList.Sort((x, y) => (x.Value.CompareTo(y.Value)));
+
+        return convertList;
+    }
+
     public bool IsStraight(List<int> hand)
     {
         int i, testValue;
@@ -49,6 +63,7 @@ public class HandCheckerScript : MonoBehaviour
     {
         //Check suit for first card
         string firstSuit;
+
         if (hand[0].GetComponent<MeshRenderer>().material.name.Contains("Clubs"))
         {
             firstSuit = "Clubs";

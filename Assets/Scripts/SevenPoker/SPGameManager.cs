@@ -36,10 +36,10 @@ public class SPGameManager : GameManager
     public SPPlayerScript sPokerPlayerScript;
     public SPPlayerScript sPokerDealerScript;
 
-    private List<int> notHeldCards = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
-    private int dealCount = 0;
-    private List<int> playerFinalValue;
-    private List<int> dealerFinalValue;
+    protected List<int> notHeldCards = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
+    protected int dealCount = 0;
+    protected List<int> playerFinalValue;
+    protected List<int> dealerFinalValue;
     
     // Start is called before the first frame update
     void Start()
@@ -86,12 +86,10 @@ public class SPGameManager : GameManager
 
             sortedPlayerHand = handChecker.SortHand(sPokerPlayerScript.fiveHand);
             sortedDealerHand = handChecker.SortHand(sPokerDealerScript.fiveHand);
-            sortedPlayerHand.ForEach(x => Debug.Log("Hand Value: " + x));
-            sortedDealerHand.ForEach(x => Debug.Log("Dealer Hand Value: " + x));
 
             pot = betAmount * 2;
-            playerFinalValue = CheckFinalHand(sortedPlayerHand);
-            dealerFinalValue = CheckFinalHand(sortedDealerHand);
+            playerFinalValue = CheckFinalHand(sortedPlayerHand, sPokerPlayerScript);
+            dealerFinalValue = CheckFinalHand(sortedDealerHand, sPokerPlayerScript);
             scoreText.text = "HAND: " + UpdateHandText(playerFinalValue[0]);
             dealerScoreText.text = "OPP. HAND: " + UpdateHandText(dealerFinalValue[0]);
 
@@ -150,7 +148,7 @@ public class SPGameManager : GameManager
         ResetBtns(true);
     }
 
-    protected void HoldBtnClicked(int btn, Text holdText)
+    protected virtual void HoldBtnClicked(int btn, Text holdText)
     {
         if (notHeldCards.Contains(btn))
         {
@@ -164,7 +162,7 @@ public class SPGameManager : GameManager
         }
     }
 
-    protected void ResetBtns(bool onOff)
+    protected virtual void ResetBtns(bool onOff)
     {
         holdBtn1.gameObject.SetActive(onOff);
         holdBtn2.gameObject.SetActive(onOff);
@@ -206,7 +204,7 @@ public class SPGameManager : GameManager
         }
     }
 
-    protected void HideDealerCards(bool onOff)
+    protected virtual void HideDealerCards(bool onOff)
     {
         hideCard1.SetActive(onOff);
         hideCard2.SetActive(onOff);
@@ -250,22 +248,6 @@ public class SPGameManager : GameManager
         betsText.text = "Bets: " + betAmount.ToString();
     }
 
-    //protected override void AutoBetClicked()
-    //{
-    //    if (autoBetSet)
-    //    {
-    //        autoBetSet = !autoBetSet;
-    //        autoBetText.color = Color.white;
-    //        betAmount = 20;
-    //        betsText.text = "Bets: " + betAmount.ToString();
-    //    }
-    //    else
-    //    {
-    //        autoBetSet = !autoBetSet;
-    //        autoBetText.color = Color.black;
-    //    }
-    //}
-
     protected virtual void ResetBtnTexts()
     {
         holdText1.gameObject.SetActive(false);
@@ -277,7 +259,7 @@ public class SPGameManager : GameManager
         holdText7.gameObject.SetActive(false);
     }
 
-    protected List<int> CheckFinalHand(List<int> sortedHand)
+    protected virtual List<int> CheckFinalHand(List<int> sortedHand, SPPlayerScript playerScript)
     {
         List<int> handValue = new List<int>();
 
@@ -311,13 +293,13 @@ public class SPGameManager : GameManager
                 sortedHand = handChecker.ExchangeAceValue(sortedHand);
             handValue = new List<int>() { 8, handChecker.ThreeKindValue(sortedHand) };
         }
-        else if (handChecker.IsRoyalFlush(sPokerPlayerScript.fiveHand, sortedHand))
+        else if (handChecker.IsRoyalFlush(playerScript.fiveHand, sortedHand))
         {
             if (sortedHand.Contains(1))
                 sortedHand = handChecker.ExchangeAceValue(sortedHand);
             handValue = new List<int>() { 10, 0 };
         }
-        else if (handChecker.IsStraightFlush(sPokerPlayerScript.fiveHand, sortedHand))
+        else if (handChecker.IsStraightFlush(playerScript.fiveHand, sortedHand))
         {
             if (sortedHand.Contains(1))
                 sortedHand = handChecker.ExchangeAceValue(sortedHand);
@@ -329,7 +311,7 @@ public class SPGameManager : GameManager
                 sortedHand = handChecker.ExchangeAceValue(sortedHand);
             handValue = new List<int>() { 5, sortedHand[4] };
         }
-        else if (handChecker.IsFlush(sPokerPlayerScript.fiveHand))
+        else if (handChecker.IsFlush(playerScript.fiveHand))
         {
             if (sortedHand.Contains(1))
                 sortedHand = handChecker.ExchangeAceValue(sortedHand);
@@ -345,7 +327,7 @@ public class SPGameManager : GameManager
         return handValue;
     }
 
-    private string UpdateHandText(int hand)
+    protected string UpdateHandText(int hand)
     {
         switch (hand)
         {

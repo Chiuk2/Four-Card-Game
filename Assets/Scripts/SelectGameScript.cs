@@ -10,6 +10,7 @@ public class SelectGameScript : MonoBehaviour
     public Button highLow;
     public Button fivePoker;
     public Button sevenPoker;
+    public Button videoPoker;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class SelectGameScript : MonoBehaviour
         highLow.onClick.AddListener(() => GoToHighLow());
         fivePoker.onClick.AddListener(() => GoToFivePoker());
         sevenPoker.onClick.AddListener(() => GoToSevenPoker());
+        videoPoker.onClick.AddListener(() => GoToVideoPoker());
     }
 
     private void GoToBlackJack()
@@ -38,5 +40,10 @@ public class SelectGameScript : MonoBehaviour
     private void GoToSevenPoker()
     {
         SceneManager.LoadScene("SevenPoker");
+    }
+
+    private void GoToVideoPoker()
+    {
+        SceneManager.LoadScene("FiveVideoPoker");
     }
 }
