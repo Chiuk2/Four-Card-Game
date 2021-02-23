@@ -11,11 +11,18 @@ public class HiLoPlayerScript : MonoBehaviour
 
     public int handValue = 0;
     public GameObject[] hand;
+    public AudioClip moneySound;
+    protected AudioSource audioS;
 
     public int cardIndex = 0;
 
     private int money = 1000;
     private List<CardScript> aceList = new List<CardScript>();
+
+    void Start()
+    {
+        audioS = GetComponent<AudioSource>();
+    }
 
     public virtual void StartHand()
     {
@@ -36,6 +43,8 @@ public class HiLoPlayerScript : MonoBehaviour
 
     public void AdjustMoney(int amount)
     {
+        if (amount > 0)
+            audioS.PlayOneShot(moneySound);
         money += amount;
     }
 
