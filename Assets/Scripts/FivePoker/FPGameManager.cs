@@ -51,7 +51,6 @@ public class FPGameManager : GameManager
     {
         handBoardController.ResetBoard();
         List<int> sortedHand;
-        List<int> testHand = new List<int>() { 1, 2, 3, 4, 5 };
 
         if (++dealCount == 2)
         {
@@ -67,7 +66,6 @@ public class FPGameManager : GameManager
                 fPokerPlayerScript.StartHand();
             }
             sortedHand = handChecker.SortHand(fPokerPlayerScript.hand);
-            sortedHand.ForEach(x => Debug.Log("Hand Value: " + x));
             pot = 0;
             CheckCurrentHand(sortedHand);
             RoundOver();
@@ -79,7 +77,6 @@ public class FPGameManager : GameManager
             GameObject.Find("Deck").GetComponent<DeckScript>().Shuffle();
             fPokerPlayerScript.StartHand();
             sortedHand = handChecker.SortHand(fPokerPlayerScript.hand);
-            sortedHand.ForEach(x => Debug.Log("Hand Value: " + x));
             CheckCurrentHand(sortedHand);
         }
 
@@ -170,47 +167,38 @@ public class FPGameManager : GameManager
         if (handChecker.IsFullHouse(sortedHand))
         {
             UpdateHandBoard("Full House");
-            Debug.Log("Hit Full House");
         }
         else if (handChecker.IsTwoPair(sortedHand))
         {
             UpdateHandBoard("Two Pair");
-            Debug.Log("Hit Two Pair");
         }
         else if (handChecker.IsPair(sortedHand))
         {
             UpdateHandBoard("Jack Or Better");
-            Debug.Log("Hit Jack Or Better");
         }
         else if (handChecker.IsThreeOfAKind(sortedHand))
         {
             UpdateHandBoard("Three Of A Kind");
-            Debug.Log("3 of a kind");
         }
         else if (handChecker.IsFourOfAKind(sortedHand))
         {
             UpdateHandBoard("Four Of A Kind");
-            Debug.Log("4 of a kind");
         }
         else if (handChecker.IsRoyalFlush(fPokerPlayerScript.hand, sortedHand))
         {
             UpdateHandBoard("Royal Flush");
-            Debug.Log("royal flush");
         }
         else if (handChecker.IsStraightFlush(fPokerPlayerScript.hand, sortedHand))
         {
             UpdateHandBoard("Straight Flush");
-            Debug.Log("straight flush");
         }
         else if (handChecker.IsStraight(sortedHand))
         {
             UpdateHandBoard("Straight");
-            Debug.Log("straight");
         }
         else if (handChecker.IsFlush(fPokerPlayerScript.hand))
         {
             UpdateHandBoard("Flush");
-            Debug.Log("flush");
         }
 
     }

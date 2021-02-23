@@ -107,7 +107,14 @@ public class GameManager : MonoBehaviour
 
     protected virtual void BetClicked()
     {
-        betAmount += 20;
+        if (betAmount + 20 < playerScript.GetMoney())
+        {
+            betAmount += 20;   
+        }
+        else if (betAmount + 20 >= playerScript.GetMoney())
+        {
+            betAmount = playerScript.GetMoney();
+        }
         betsText.text = "Bets: " + betAmount.ToString();
     }
 

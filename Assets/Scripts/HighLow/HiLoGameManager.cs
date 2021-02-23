@@ -144,6 +144,19 @@ public class HiLoGameManager : GameManager
         }
     }
 
+    protected override void BetClicked()
+    {
+        if (betAmount + 20 < hlPlayerScript.GetMoney())
+        {
+            betAmount += 20;
+        }
+        else if (betAmount + 20 >= hlPlayerScript.GetMoney())
+        {
+            betAmount = hlPlayerScript.GetMoney();
+        }
+        betsText.text = "Bets: " + betAmount.ToString();
+    }
+
     void showCards(bool doShow)
     {
         foreach (GameObject card in hlPlayerScript.hand)
