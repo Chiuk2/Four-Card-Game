@@ -27,10 +27,10 @@ public class DeckScript : MonoBehaviour
             {
                 num = 10;
             }
+            Debug.Log("Card Number: " + num);
             cardValues[i] = num++;
+            Debug.Log("Card Number: " + cardValues[i]);
         }
-
-        currentIndex = 1;
     }
 
     public void Shuffle()
@@ -46,7 +46,7 @@ public class DeckScript : MonoBehaviour
             cardValues[i] = cardValues[randomCard];
             cardValues[randomCard] = value;
         }
-        
+        currentIndex = 1;
     }
 
     public int DealCard(CardScript cardScript)

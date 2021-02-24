@@ -5457,7 +5457,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 348078899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -6880,7 +6880,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 424308240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -7161,7 +7161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19565e287299b4d4a81ad1b7a4b83849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardScript: {fileID: 424308241}
+  cardScript: {fileID: 0}
   deckScript: {fileID: 1191702015}
   handValue: 0
   hand:
@@ -8488,7 +8488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519897630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -16023,7 +16023,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 971414245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -19929,7 +19929,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1199056616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -20646,7 +20646,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1239825503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -22401,7 +22401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377345127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -24928,7 +24928,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1522826679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -25482,7 +25482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19565e287299b4d4a81ad1b7a4b83849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardScript: {fileID: 1199056618}
+  cardScript: {fileID: 0}
   deckScript: {fileID: 1191702015}
   handValue: 0
   hand:
@@ -26578,7 +26578,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1608908821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -27367,7 +27367,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1679162812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -27919,7 +27919,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1704493535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -29093,7 +29093,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1789411930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -29291,7 +29291,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1798930977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -32355,7 +32355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1949081731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0

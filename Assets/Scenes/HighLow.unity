@@ -7917,13 +7917,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 483207970}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1051621265 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d,
-    type: 3}
-  m_PrefabInstance: {fileID: 483207970}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1051621266
+--- !u!114 &1051621261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7932,10 +7926,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1051621260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+--- !u!4 &1051621265 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d,
+    type: 3}
+  m_PrefabInstance: {fileID: 483207970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1072904017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8408,7 +8408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaeab81942fd2a479d9d15e63106c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardScript: {fileID: 2103248011}
+  cardScript: {fileID: 0}
   deckScript: {fileID: 376860443}
   handValue: 0
   hand:
@@ -10401,7 +10401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1694480678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -13596,7 +13596,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2044701154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -13923,7 +13923,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2103248009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af4751c67f106946bcbe27a1e3746d0, type: 3}
+  m_Script: {fileID: 11500000, guid: d916bc765849bce4e9eb6c1d34d21734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
@@ -13956,7 +13956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa21e54775da68d46b28b554c38c90c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardScript: {fileID: 1051621266}
+  cardScript: {fileID: 0}
   deckScript: {fileID: 376860443}
   handValue: 0
   hand:

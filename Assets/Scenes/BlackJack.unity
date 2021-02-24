@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard4
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -631,6 +635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard3
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -832,6 +840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard5
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1005,6 +1017,10 @@ PrefabInstance:
     - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_Name
       value: HitCard2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
@@ -1384,6 +1400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard8
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1584,6 +1604,10 @@ PrefabInstance:
     - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_Name
       value: HitCard2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
@@ -1800,6 +1824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard5
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1881,6 +1909,10 @@ PrefabInstance:
     - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_Name
       value: HitCard8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
@@ -2041,6 +2073,10 @@ PrefabInstance:
     - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_Name
       value: HitCard1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
@@ -2353,6 +2389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard6
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2631,6 +2671,10 @@ PrefabInstance:
     - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_Name
       value: HitCard7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
@@ -3233,6 +3277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard3
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3397,6 +3445,10 @@ PrefabInstance:
     - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_Name
       value: HitCard1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
@@ -4326,6 +4378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard4
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4781,6 +4837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitCard7
       objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -4940,6 +5000,10 @@ PrefabInstance:
     - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_Name
       value: HitCard6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903750800318000, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152246405736606, guid: d0117bf69ca014581bf7fed8997c256d, type: 3}
       propertyPath: m_RootOrder

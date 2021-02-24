@@ -23,7 +23,5 @@ public class HiLoDeckScript : DeckScript
 
             cardValues[i] = num++;
         }
-
-        currentIndex = 1;
     }
 }

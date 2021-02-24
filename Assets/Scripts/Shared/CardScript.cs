@@ -21,14 +21,16 @@ public class CardScript : MonoBehaviour
         return GetComponent<MeshRenderer>().material.name;
     }
 
-    public void SetCard(GameObject newCard)
+    public virtual void SetCard(GameObject newCard)
     {
+        gameObject.SetActive(true);
         gameObject.GetComponent<MeshRenderer>().sharedMaterial = newCard.GetComponent<Renderer>().sharedMaterial;
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 180));
     }
 
-    public void ResetCard()
+    public virtual void ResetCard()
     {
+        gameObject.SetActive(false);
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0));
         value = 0;
     }
