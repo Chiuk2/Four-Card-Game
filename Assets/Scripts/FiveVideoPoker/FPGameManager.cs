@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FPGameManager : GameManager
 {
+    public AudioClip holdBtnSound, changeBetSound;
     public Button holdBtn1;
     public Button holdBtn2;
     public Button holdBtn3;
@@ -32,6 +33,7 @@ public class FPGameManager : GameManager
     {
         pot = 0;
         gameText.gameObject.SetActive(false);
+        audioS = GetComponent<AudioSource>();
         dealBtn.onClick.AddListener(() => DealClicked());
         betBtn.onClick.AddListener(() => BetClicked());
         autoBetBtn.onClick.AddListener(() => AutoBetClicked());
@@ -49,8 +51,10 @@ public class FPGameManager : GameManager
 
     protected override void DealClicked()
     {
-        handBoardController.ResetBoard();
         List<int> sortedHand;
+
+        audioS.PlayOneShot(dealSound);
+        handBoardController.ResetBoard();
 
         if (++dealCount == 2)
         {
@@ -89,6 +93,12 @@ public class FPGameManager : GameManager
         winMultiplierText.text = "WIN " + winMuliplier.ToString() + "X" + pot;
         fPokerPlayerScript.AdjustMoney(pot * winMuliplier);
         currencyText.text = "$" + fPokerPlayerScript.GetMoney().ToString();
+        
+        if (pot > 0)
+        {
+            audioS.PlayOneShot(jackpotSound);
+        }
+
         pot = 0;
         ResetBtns(false);
         dealCount = 0;
@@ -117,6 +127,7 @@ public class FPGameManager : GameManager
 
         handBoardController.UpdateBetPanel(betIndex++);
         betsText.text = "Bet: " + betIndex;
+        audioS.PlayOneShot(changeBetSound);
     }
 
     protected override void AutoBetClicked()
@@ -126,6 +137,7 @@ public class FPGameManager : GameManager
         handBoardController.MaxBetPanel(betIndex, prevIndex);
         betsText.text = "Bet: " + (betIndex + 1);
         betIndex++;
+        audioS.PlayOneShot(changeBetSound);
     }
 
     protected virtual void HoldBtnClicked(int btn, Text holdText)
@@ -140,6 +152,7 @@ public class FPGameManager : GameManager
             notHeldCards.Add(btn);
             holdText.gameObject.SetActive(false);
         }
+        audioS.PlayOneShot(holdBtnSound);
     }
 
     protected virtual void ResetBtns(bool onOff)

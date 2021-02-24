@@ -10,6 +10,7 @@ public class FGameManager : SPGameManager
     // Start is called before the first frame update
     void Start()
     {
+        audioS = GetComponent<AudioSource>();
         gameText.gameObject.SetActive(false);
         dealBtn.onClick.AddListener(() => DealClicked());
         betBtn.onClick.AddListener(() => BetClicked());
@@ -33,6 +34,8 @@ public class FGameManager : SPGameManager
     {
         List<int> sortedPlayerHand;
         List<int> sortedDealerHand;
+
+        audioS.PlayOneShot(dealSound);
 
         if (++dealCount == 2)
         {
@@ -120,6 +123,7 @@ public class FGameManager : SPGameManager
             notFiveHeldCards.Add(btn);
             holdText.gameObject.SetActive(false);
         }
+        audioS.PlayOneShot(holdBtnSound);
     }
 
     protected override List<int> CheckFinalHand(List<int> sortedHand, SPPlayerScript playerScript)

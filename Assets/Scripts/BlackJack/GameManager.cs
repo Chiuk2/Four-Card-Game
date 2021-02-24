@@ -32,13 +32,17 @@ public class GameManager : MonoBehaviour
     public PlayerScript playerScript;
     public PlayerScript dealerScript;
 
+    public AudioClip cardBtnSound, chipBtnSound, jackpotSound, dealSound;
+
     private int standClicks = 0;
     protected int pot = 0;
     protected int betAmount = 20;
     protected bool autoBetSet = false;
+    protected AudioSource audioS;
     // Start is called before the first frame update
     void Start()
     {
+        audioS = GetComponent<AudioSource>();
         gameText.gameObject.SetActive(false);
         standBtn.gameObject.SetActive(false);
         hitBtn.gameObject.SetActive(false);
@@ -62,6 +66,7 @@ public class GameManager : MonoBehaviour
         dealerScoreText.gameObject.SetActive(true);
         hideCard.SetActive(false);
         HitDealer();
+        audioS.PlayOneShot(cardBtnSound);
     }
 
 
@@ -69,6 +74,7 @@ public class GameManager : MonoBehaviour
     {
         if (playerScript.cardIndex <= 10)
         {
+            audioS.PlayOneShot(cardBtnSound);
             playerScript.GetCard();
             scoreText.text = "Hand: " + playerScript.handValue.ToString();
             if (playerScript.handValue > 20)
@@ -103,6 +109,7 @@ public class GameManager : MonoBehaviour
         betsText.text = "Bets: " + betAmount.ToString();
         playerScript.AdjustMoney(-betAmount);
         currencyText.text = "$" + playerScript.GetMoney().ToString();
+        audioS.PlayOneShot(dealSound);
     }
 
     protected virtual void BetClicked()
@@ -116,6 +123,7 @@ public class GameManager : MonoBehaviour
             betAmount = playerScript.GetMoney();
         }
         betsText.text = "Bets: " + betAmount.ToString();
+        audioS.PlayOneShot(chipBtnSound);
     }
 
     protected virtual void AutoBetClicked()
@@ -132,23 +140,27 @@ public class GameManager : MonoBehaviour
             autoBetSet = !autoBetSet;
             autoBetText.color = Color.black;
         }
+        audioS.PlayOneShot(chipBtnSound);
     }
 
     protected void QuitClicked()
     {
         quitBackDrop.SetActive(true);
         quitPopUp.SetActive(true);
+        audioS.PlayOneShot(chipBtnSound);
     }
 
     protected void NoClicked()
     {
         quitBackDrop.SetActive(false);
         quitPopUp.SetActive(false);
+        audioS.PlayOneShot(chipBtnSound);
     }
 
     protected void YesClicked()
     {
         SceneManager.LoadScene("MainMenu");
+        audioS.PlayOneShot(chipBtnSound);
     }
 
     private void HitDealer()

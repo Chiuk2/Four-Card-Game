@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SPGameManager : GameManager
 {
+    public AudioClip holdBtnSound;
+
     public Button holdBtn1;
     public Button holdBtn2;
     public Button holdBtn3;
@@ -44,6 +46,7 @@ public class SPGameManager : GameManager
     // Start is called before the first frame update
     void Start()
     {
+        audioS = GetComponent<AudioSource>();
         gameText.gameObject.SetActive(false);
         dealBtn.onClick.AddListener(() => DealClicked());
         betBtn.onClick.AddListener(() => BetClicked());
@@ -78,6 +81,8 @@ public class SPGameManager : GameManager
     {
         List<int> sortedPlayerHand;
         List<int> sortedDealerHand;
+
+        audioS.PlayOneShot(dealSound);
 
         if (++dealCount == 2)
         {
@@ -160,6 +165,7 @@ public class SPGameManager : GameManager
             notHeldCards.Add(btn);
             holdText.gameObject.SetActive(false);
         }
+        audioS.PlayOneShot(holdBtnSound);
     }
 
     protected virtual void ResetBtns(bool onOff)
@@ -246,6 +252,7 @@ public class SPGameManager : GameManager
             betAmount = sPokerPlayerScript.GetMoney();
         }
         betsText.text = "Bets: " + betAmount.ToString();
+        audioS.PlayOneShot(chipBtnSound);
     }
 
     protected virtual void ResetBtnTexts()

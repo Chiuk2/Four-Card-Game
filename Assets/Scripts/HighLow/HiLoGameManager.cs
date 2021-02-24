@@ -29,6 +29,7 @@ public class HiLoGameManager : GameManager
         hideCard.SetActive(false);
         scoreText.text = "Hand: --";
 
+        audioS = GetComponent<AudioSource>();
         dealBtn.onClick.AddListener(() => DealClicked());
         betBtn.onClick.AddListener(() => BetClicked());
         autoBetBtn.onClick.AddListener(() => AutoBetClicked());
@@ -76,6 +77,7 @@ public class HiLoGameManager : GameManager
         betsText.text = "Bets: " + betAmount.ToString();
         hlPlayerScript.AdjustMoney(-betAmount);
         currencyText.text = "$" + hlPlayerScript.GetMoney().ToString();
+        audioS.PlayOneShot(cardBtnSound);
     }
 
     protected override void RoundOver()
@@ -105,6 +107,7 @@ public class HiLoGameManager : GameManager
         int cardValue = hlPlayerScript.hand[selectCard].GetComponent<CardScript>().GetValueOfCard();
         int dealerCardValue = hlDealerScript.hand[0].GetComponent<CardScript>().GetValueOfCard();
 
+        audioS.PlayOneShot(cardBtnSound);
         hideCard.SetActive(false);
         dealerScoreText.text = "Dealer Hand: " + hlDealerScript.handValue.ToString();
         
@@ -126,6 +129,7 @@ public class HiLoGameManager : GameManager
         int cardValue = hlPlayerScript.hand[selectCard].GetComponent<CardScript>().GetValueOfCard();
         int dealerCardValue = hlDealerScript.hand[0].GetComponent<CardScript>().GetValueOfCard();
 
+        audioS.PlayOneShot(cardBtnSound);
         scoreText.text = "Hand: " + cardValue;
         hideCard.SetActive(false);
         dealerScoreText.text = "Dealer Hand: " + hlDealerScript.handValue.ToString();
@@ -146,6 +150,7 @@ public class HiLoGameManager : GameManager
 
     protected override void BetClicked()
     {
+        audioS.PlayOneShot(chipBtnSound);
         if (betAmount + 20 < hlPlayerScript.GetMoney())
         {
             betAmount += 20;
