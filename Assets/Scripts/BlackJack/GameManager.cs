@@ -84,6 +84,18 @@ public class GameManager : MonoBehaviour
 
     protected virtual void DealClicked()
     {
+        if (playerScript.GetMoney() <= 0)
+        {
+            GameOver();
+            return;
+        }
+        else if (playerScript.GetMoney() < betAmount)
+        {
+            gameText.text = "Not Enough Funds";
+            gameText.gameObject.SetActive(true);
+            return;
+        }
+
         playerScript.ResetHand();
         dealerScript.ResetHand();
         hideCard.SetActive(true);
@@ -110,6 +122,11 @@ public class GameManager : MonoBehaviour
         playerScript.AdjustMoney(-betAmount);
         currencyText.text = "$" + playerScript.GetMoney().ToString();
         audioS.PlayOneShot(dealSound);
+
+        if (playerScript.handValue == 21)
+        {
+            RoundOver();
+        }
     }
 
     protected virtual void BetClicked()
@@ -220,7 +237,15 @@ public class GameManager : MonoBehaviour
             dealBtn.gameObject.SetActive(true);
             betBtn.gameObject.SetActive(true);
             autoBetBtn.gameObject.SetActive(true);
-            
+            if (standClicks == 0)
+            {
+                standBtn.gameObject.SetActive(false);
+                hitBtn.gameObject.SetActive(false);
+                dealerScoreText.gameObject.SetActive(true);
+                hideCard.SetActive(false);
+                audioS.PlayOneShot(cardBtnSound);
+            }
+
             currencyText.text = "$" + playerScript.GetMoney().ToString();
             standClicks = 0;
             pot = 0;
@@ -230,5 +255,16 @@ public class GameManager : MonoBehaviour
                 betsText.text = "Bets: " + betAmount.ToString();
             }
         }
+    }
+
+    protected virtual void GameOver()
+    {
+        gameText.text = "GAME OVER";
+        gameText.gameObject.SetActive(true);
+        dealBtn.gameObject.SetActive(false);
+        betBtn.gameObject.SetActive(false);
+        autoBetBtn.gameObject.SetActive(false);
+        hitBtn.gameObject.SetActive(false);
+        standBtn.gameObject.SetActive(false);
     }
 }

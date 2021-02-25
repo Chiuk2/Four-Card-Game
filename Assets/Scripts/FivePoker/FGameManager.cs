@@ -73,6 +73,18 @@ public class FGameManager : SPGameManager
         }
         else
         {
+            if (sPokerPlayerScript.GetMoney() <= 0)
+            {
+                GameOver();
+                return;
+            }
+            else if (sPokerPlayerScript.GetMoney() < betAmount)
+            {
+                gameText.text = "Not Enough Funds";
+                gameText.gameObject.SetActive(true);
+                dealCount = 0;
+                return;
+            }
             StartRound();
             sPokerPlayerScript.ResetHand();
             sPokerDealerScript.ResetHand();

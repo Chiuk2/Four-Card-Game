@@ -15,6 +15,8 @@ public class HiLoGameManager : GameManager
     public HiLoPlayerScript hlPlayerScript;
     public HiLoDealerScript hlDealerScript;
 
+    private int dealtCardValue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class HiLoGameManager : GameManager
         highBtn3.gameObject.SetActive(false);
         lowBtn3.gameObject.SetActive(false);
         hideCard.SetActive(false);
-        scoreText.text = "Hand: --";
+        scoreText.text = "Card: --";
 
         audioS = GetComponent<AudioSource>();
         dealBtn.onClick.AddListener(() => DealClicked());
@@ -49,6 +51,18 @@ public class HiLoGameManager : GameManager
 
     protected override void DealClicked()
     {
+        if (hlPlayerScript.GetMoney() <= 0)
+        {
+            GameOver();
+            return;
+        }
+        else if (hlPlayerScript.GetMoney() < betAmount)
+        {
+            gameText.text = "Not Enough Funds";
+            gameText.gameObject.SetActive(true);
+            return;
+        }
+
         hlPlayerScript.ResetHand();
         hlDealerScript.ResetHand();
         gameText.gameObject.SetActive(false);
@@ -59,13 +73,22 @@ public class HiLoGameManager : GameManager
         hideCard.SetActive(true);
         showCards(true);
 
-        scoreText.text = "Hand: --";
+        int cardValue = hlPlayerScript.hand[0].GetComponent<CardScript>().GetValueOfCard();
+
+        scoreText.text = "Card: " + cardValue;
         dealBtn.gameObject.SetActive(false);
         betBtn.gameObject.SetActive(false);
         autoBetBtn.gameObject.SetActive(false);
-
-        highBtn2.gameObject.SetActive(true);
-        lowBtn2.gameObject.SetActive(true);
+        // Check card value for 1 or 13
+        if (cardValue < 2)
+            highBtn2.gameObject.SetActive(true);
+        else if (cardValue > 12)
+            lowBtn2.gameObject.SetActive(true);
+        else
+        {
+            highBtn2.gameObject.SetActive(true);
+            lowBtn2.gameObject.SetActive(true);
+        }
 
         // Uncomment for more player cards
         //highBtn1.gameObject.SetActive(true);
@@ -130,7 +153,6 @@ public class HiLoGameManager : GameManager
         int dealerCardValue = hlDealerScript.hand[0].GetComponent<CardScript>().GetValueOfCard();
 
         audioS.PlayOneShot(cardBtnSound);
-        scoreText.text = "Hand: " + cardValue;
         hideCard.SetActive(false);
         dealerScoreText.text = "Dealer Hand: " + hlDealerScript.handValue.ToString();
         dealerScoreText.gameObject.SetActive(true);
@@ -160,6 +182,15 @@ public class HiLoGameManager : GameManager
             betAmount = hlPlayerScript.GetMoney();
         }
         betsText.text = "Bets: " + betAmount.ToString();
+    }
+
+    protected override void GameOver()
+    {
+        gameText.text = "GAME OVER";
+        gameText.gameObject.SetActive(true);
+        dealBtn.gameObject.SetActive(false);
+        betBtn.gameObject.SetActive(false);
+        autoBetBtn.gameObject.SetActive(false);
     }
 
     void showCards(bool doShow)

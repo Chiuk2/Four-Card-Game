@@ -2903,7 +2903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4968826519474696, guid: 2df786d4e60384b2b8ea939329a1ee73, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2799999
+      value: -0.232
       objectReference: {fileID: 0}
     - target: {fileID: 4968826519474696, guid: 2df786d4e60384b2b8ea939329a1ee73, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2931,6 +2931,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df786d4e60384b2b8ea939329a1ee73, type: 3}
+--- !u!1001 &662921059
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1434604574236704, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_Name
+      value: MusicController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9896824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.052288458
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.13246143
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.015772283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -6.181
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 15.193001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447958452867768, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e3637a75d7a540458d67c2c7f9641c9, type: 3}
 --- !u!1 &664626869
 GameObject:
   m_ObjectHideFlags: 0
@@ -7865,75 +7922,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 07b9abe8342f746139e36015da9abffb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18fd985108eb945b4b72b0b59e531aca, type: 3}
---- !u!1001 &1532705913
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6721625869793760416, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_Name
-      value: MusicController
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 236.84192
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 299.0402
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 6.753845
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721625869793760419, guid: 1c00ece6cf0816743893d83965ccc0b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1c00ece6cf0816743893d83965ccc0b4, type: 3}
 --- !u!1001 &1536012527
 PrefabInstance:
   m_ObjectHideFlags: 0

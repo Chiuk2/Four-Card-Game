@@ -76,6 +76,19 @@ public class FPGameManager : GameManager
         }
         else
         {
+            if (fPokerPlayerScript.GetMoney() <= 0)
+            {
+                GameOver();
+                return;
+            }
+            else if (fPokerPlayerScript.GetMoney() < betIndex)
+            {
+                gameText.text = "Not Enough Funds";
+                gameText.gameObject.SetActive(true);
+                dealCount = 0;
+                return;
+            }
+
             StartRound();
             fPokerPlayerScript.ResetHand();
             GameObject.Find("Deck").GetComponent<DeckScript>().Shuffle();
@@ -138,6 +151,15 @@ public class FPGameManager : GameManager
         betsText.text = "Bet: " + (betIndex + 1);
         betIndex++;
         audioS.PlayOneShot(changeBetSound);
+    }
+
+    protected override void GameOver()
+    {
+        gameText.text = "GAME OVER";
+        gameText.gameObject.SetActive(true);
+        dealBtn.gameObject.SetActive(false);
+        betBtn.gameObject.SetActive(false);
+        autoBetBtn.gameObject.SetActive(false);
     }
 
     protected virtual void HoldBtnClicked(int btn, Text holdText)
