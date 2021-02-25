@@ -8,12 +8,14 @@ public class MusicController : MonoBehaviour
     public AudioClip menuSong, blackJackSong, highLowSong, fivePokerSong, sevenPokerSong, gameSelectSong;
 
     private AudioSource audioS;
+    private bool audioOnOff;
     // Start is called before the first frame update
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         audioS = GetComponent<AudioSource>();
+        audioOnOff = true;
 
         switch (sceneName)
         {
@@ -47,5 +49,14 @@ public class MusicController : MonoBehaviour
     {
         audioS.clip = song;
         audioS.Play();
+    }
+
+    private void OnMouseDown()
+    {
+        if (audioOnOff)
+            audioS.Stop();
+        else
+            audioS.Play();
+        audioOnOff = !audioOnOff;
     }
 }
